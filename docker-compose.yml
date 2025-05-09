@@ -1,6 +1,9 @@
 services: 
   anki-desktop: 
-    image: "pnorcross/anki-desktop:latest"
+    container_name: anki-desktop
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - /data/apps/anki/config:/config/app
     ports: 
